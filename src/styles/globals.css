@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--surface: hsl(228, 16%, 6%);
+	--text: hsl(0, 0%, 100%);
+	--primary: hsl(207, 90%, 77%);
+}
+
+body {
+	background-color: var(--surface);
+	color: var(--text);
+	color-scheme: dark;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}

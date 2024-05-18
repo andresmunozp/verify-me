@@ -18,4 +18,19 @@ body {
 	.text-balance {
 		text-wrap: balance;
 	}
+
+	.bg-grid {
+		background-size: 100px 100px;
+		background-image: url(/assets/grid.png);
+		background-position-y: -9px;
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			transparent,
+			5%,
+			hsl(0 0% 100%),
+			90%,
+			transparent
+		);
+		mask-image: linear-gradient(to bottom, transparent, 5%, hsl(0 0% 100%), 90%, transparent);
+	}
 }

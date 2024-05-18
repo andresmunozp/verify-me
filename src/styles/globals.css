@@ -3,9 +3,23 @@
 @tailwind utilities;
 
 :root {
-	--surface: hsl(228, 16%, 6%);
-	--text: hsl(0, 0%, 100%);
-	--primary: hsl(207, 90%, 77%);
+	--surface: hsl(228 16% 6%);
+	--text: hsl(0 0% 100%);
+	--primary: hsl(207 90% 77%);
+	--stroke: hsl(221 16% 20%);
+}
+
+::selection {
+	background-color: hsl(208 100% 66% / 0.4);
+}
+
+:focus-visible {
+	outline: 2px solid hsl(208 100% 66%);
+	border-radius: 2px;
+}
+
+* {
+	scrollbar-width: thin;
 }
 
 body {

@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
-import { Spline_Sans } from "next/font/google"
+import { Inter } from "next/font/google"
+import { Header } from "~/components/header"
 import "~/styles/globals.css"
 
-const splineSans = Spline_Sans({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "Verify me",
@@ -17,7 +18,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="es">
-			<body className={splineSans.className}>
+			<body className={inter.className}>
+				<Header />
 				<main>{children}</main>
 			</body>
 		</html>

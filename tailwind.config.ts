@@ -12,6 +12,7 @@ const config: Config = {
         "surface": "var(--surface)",
         "text": "var(--text)",
         "primary": "var(--primary)",
+        "stroke": "var(--stroke)",
       },
     },
   },

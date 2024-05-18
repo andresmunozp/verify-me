@@ -1,6 +1,6 @@
 export const About = () => {
 	return (
-		<section className="my-24 px-4">
+		<section className="my-36 px-4">
 			<h2 className="mb-12 text-center text-2xl font-bold md:text-4xl">Sobre nosotros</h2>
 			<div className="mx-auto grid max-w-[1250px] gap-5 md:grid-cols-2 md:gap-9">
 				<img src="/assets/about-left.png" alt="" width={450} height={255} />

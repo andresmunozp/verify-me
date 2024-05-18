@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--surface: hsl(228 16% 6%);
-	--text: hsl(0 0% 100%);
-	--primary: hsl(207 90% 77%);
-	--stroke: hsl(221 16% 20%);
+@layer base {
+	:root {
+		--surface: hsl(228 16% 6%);
+		--text: hsl(208, 35%, 93%);
+		--primary: hsl(216, 84%, 52%);
+		--stroke: hsl(221 16% 20%);
+
+		--radius: 0.5rem;
+	}
 }
 
 ::selection {
@@ -14,18 +18,23 @@
 }
 
 :focus-visible {
-	outline: 2px solid hsl(208 100% 66%);
+	outline: 2px solid hsl(216, 84%, 52%);
 	border-radius: 2px;
+	outline-offset: 1px;
 }
 
 * {
 	scrollbar-width: thin;
 }
 
-body {
-	background-color: var(--surface);
-	color: var(--text);
-	color-scheme: dark;
+@layer base {
+	* {
+		@apply border-stroke;
+	}
+
+	body {
+		@apply bg-surface text-text;
+	}
 }
 
 @layer utilities {

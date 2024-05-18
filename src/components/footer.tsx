@@ -3,7 +3,7 @@ import { VerifyMeLogo } from "~/components/svg"
 
 export const Footer = () => {
 	return (
-		<footer className="border-t-stroke border-t py-14">
+		<footer className="py-14">
 			<div className="flex-y mx-auto flex max-w-[1250px] flex-wrap items-center justify-between gap-6 px-4">
 				<VerifyMeLogo />
 

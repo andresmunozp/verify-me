@@ -11,12 +11,15 @@ export const Header = () => {
 			<nav className="flex items-center justify-between">
 				<ul className="flex items-center gap-x-4">
 					<li>
-						<Link className="transition-opacity hover:opacity-75" href="/">
+						<Link className="transition-opacity hover:opacity-75" href="/login">
 							Iniciar sessión
 						</Link>
 					</li>
 					<li>
-						<Link className="rounded border px-3 py-2 transition-opacity hover:opacity-75" href="/">
+						<Link
+							className="rounded border px-3 py-2 transition-opacity hover:opacity-75"
+							href="/register"
+						>
 							Registrarse
 						</Link>
 					</li>

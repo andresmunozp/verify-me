@@ -1,22 +1,27 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        "surface": "var(--surface)",
-        "text": "var(--text)",
-        "primary": "var(--primary)",
-        "stroke": "var(--stroke)",
-      },
-    },
-  },
-  plugins: [],
-};
+const config = {
+	content: [
+		"./pages/**/*.{ts,tsx}",
+		"./components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}",
+	],
+	theme: {
+		extend: {
+			colors: {
+				surface: "var(--surface)",
+				text: "var(--text)",
+				stroke: "var(--stroke)",
+				primary: "var(--primary)",
+			},
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)",
+			},
+		},
+	},
+} satisfies Config
 
-export default config;
+export default config

@@ -1,10 +1,10 @@
 export const About = () => {
 	return (
-		<section className="my-36 px-4">
+		<section className="my-20 px-4 md:my-36">
 			<h2 className="mb-12 text-center text-2xl font-bold md:text-4xl">Sobre nosotros</h2>
-			<div className="mx-auto grid max-w-[1250px] gap-5 md:grid-cols-2 md:gap-9">
+			<div className="mx-auto grid max-w-[1250px] gap-9 md:grid-cols-2">
 				<img src="/assets/about-left.png" alt="" width={450} height={255} />
-				<p className="text-lg">
+				<p className="md:text-lg">
 					En verify.me entendemos lo importante que es mantener tus datos seguros. Por eso, hemos
 					creado una plataforma donde puedes confiar plenamente en la protección de tu información
 					personal. Con tecnología de vanguardia y protocolos de seguridad robustos, estamos
@@ -17,7 +17,7 @@ export const About = () => {
 					width={450}
 					height={301}
 				/>
-				<p className="text-lg md:row-start-2">
+				<p className="md:row-start-2 md:text-lg">
 					Nuestra misión es proporcionar la máxima seguridad en procesos de firma de contratos y
 					registro de identidad. Sabemos lo importante que es asegurarse de que quien firma un
 					documento es realmente la persona correcta. Por eso, hemos desarrollado un sistema

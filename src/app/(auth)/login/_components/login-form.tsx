@@ -1,14 +1,12 @@
 "use client"
 
-import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { LoginSchema } from "~/schemas"
+import { type LoginSchemaTypes, LoginSchema } from "~/schemas"
 import { Button } from "~/components/ui/button"
 import {
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
@@ -17,7 +15,7 @@ import {
 import { Input } from "~/components/ui/input"
 
 export const LoginForm = () => {
-	const form = useForm<z.infer<typeof LoginSchema>>({
+	const form = useForm<LoginSchemaTypes>({
 		resolver: zodResolver(LoginSchema),
 		defaultValues: {
 			email: "",
@@ -25,12 +23,12 @@ export const LoginForm = () => {
 		},
 	})
 
-	const onSubmit = (values: z.infer<typeof LoginSchema>) => {}
+	const onSubmit = (values: LoginSchemaTypes) => {}
 
 	return (
 		<Form {...form}>
 			<form
-				className="mx-auto flex max-w-[550px] flex-col gap-y-5"
+				className="mx-auto flex max-w-[550px] flex-col gap-y-5 px-4"
 				onSubmit={form.handleSubmit(onSubmit)}
 			>
 				<FormField

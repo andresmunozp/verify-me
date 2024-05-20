@@ -5,7 +5,9 @@ export const Footer = () => {
 	return (
 		<footer className="py-14">
 			<div className="flex-y mx-auto flex max-w-[1250px] flex-wrap items-center justify-between gap-6 px-4">
-				<VerifyMeLogo />
+				<Link href="/">
+					<VerifyMeLogo />
+				</Link>
 
 				<div className="flex flex-wrap gap-x-4 gap-y-10 md:gap-x-12">
 					<nav>

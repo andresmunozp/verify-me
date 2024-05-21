@@ -1,9 +1,9 @@
-import { RegisterForm } from "./_components/login-form"
+import { RegisterForm } from "./_components/register-form"
 
 export default function Register() {
 	return (
 		<>
-			<h1 className="my-7 text-center text-3xl font-bold md:text-4xl">Registrarse</h1>
+			<h1 className="pb-4 pt-5 text-center text-3xl font-bold md:text-4xl">Registrarse</h1>
 			<RegisterForm />
 		</>
 	)

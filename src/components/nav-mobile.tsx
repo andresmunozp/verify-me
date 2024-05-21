@@ -10,7 +10,7 @@ export const NavMobile = () => {
 	const [open, setOpen] = useState(false)
 
 	useEffect(() => {
-		setOpen(pathName !== window.location.pathname)
+		setOpen(false)
 	}, [pathName])
 
 	const handleClick = () => {

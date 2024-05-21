@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { type LoginSchemaTypes, LoginSchema } from "~/schemas"
+import { type LoginSchemaTypes, LoginSchema } from "~/schemas/LoginSchema"
 import { Button } from "~/components/ui/button"
 import {
 	Form,
@@ -18,8 +18,8 @@ export const LoginForm = () => {
 	const form = useForm<LoginSchemaTypes>({
 		resolver: zodResolver(LoginSchema),
 		defaultValues: {
-			email: "",
-			password: "",
+			email: undefined,
+			password: undefined,
 		},
 	})
 
@@ -28,7 +28,7 @@ export const LoginForm = () => {
 	return (
 		<Form {...form}>
 			<form
-				className="mx-auto flex max-w-[550px] flex-col gap-y-5 px-4"
+				className="mx-auto flex max-w-[550px] flex-col gap-y-5 px-4 py-8"
 				onSubmit={form.handleSubmit(onSubmit)}
 			>
 				<FormField
@@ -38,9 +38,9 @@ export const LoginForm = () => {
 						<FormItem>
 							<FormLabel>Email</FormLabel>
 							<FormControl>
-								<Input placeholder="john.doe@gmail.com" {...field} />
+								<Input {...field} placeholder="john.doe@gmail.com" />
 							</FormControl>
-							<FormMessage className="text-red-500" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -52,9 +52,9 @@ export const LoginForm = () => {
 						<FormItem>
 							<FormLabel>Contraseña</FormLabel>
 							<FormControl>
-								<Input placeholder="Tu contraseña" {...field} />
+								<Input {...field} type="password" placeholder="Tu contraseña" />
 							</FormControl>
-							<FormMessage className="text-red-500" />
+							<FormMessage />
 						</FormItem>
 					)}
 				/>

@@ -7,4 +7,5 @@ export const ERROR_MESSAGE = {
 	fileMaxSize: "La imagen debe pesar menos de 3MB",
 	fileType: "La imagen debe ser png o jpeg",
 	legalCheckbox: "Debes aceptar los términos y condiciones",
+	invalidFields: "Campos no válidos",
 }

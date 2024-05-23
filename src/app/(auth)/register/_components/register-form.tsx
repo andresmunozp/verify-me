@@ -17,6 +17,7 @@ import {
 import { Input } from "~/components/ui/input"
 import { FormLegend } from "~/components/form-legend"
 import { Checkbox } from "~/components/ui/checkbox"
+import { createFormDataFromObject } from "~/utils"
 
 export const RegisterForm = () => {
 	const [error, setError] = useState("")
@@ -29,16 +30,16 @@ export const RegisterForm = () => {
 			phoneNumber: "",
 			frontSideId: undefined,
 			backSideId: undefined,
-			selfie: undefined,
-			isLegalAccepted: undefined,
+			facePhoto: undefined,
+			isLegalAccepted: "",
 		},
 	})
 
 	const onSubmit = (values: RegisterSchemaTypes) => {
 		startTransition(async () => {
-			const data = await register(values)
+			const formData = createFormDataFromObject(values)
 
-			// TODO: Definicion de pasos de validación
+			const data = await register(formData)
 
 			if (data?.error) {
 				setError(data.error)
@@ -135,7 +136,7 @@ export const RegisterForm = () => {
 						<FormLegend label="Datos biométricos" />
 						<FormField
 							control={form.control}
-							name="selfie"
+							name="facePhoto"
 							render={({ field: { value, onChange, ...fieldProps } }) => (
 								<FormItem>
 									<FormLabel>Foto de su rostro</FormLabel>
@@ -155,20 +156,20 @@ export const RegisterForm = () => {
 					<FormField
 						control={form.control}
 						name="isLegalAccepted"
-						render={({ field }) => (
+						render={({ field: { value, onChange } }) => (
 							<FormItem>
 								<div className="flex items-center space-x-2">
 									<FormControl>
 										<Checkbox
-											checked={field.value}
-											onCheckedChange={field.onChange}
+											checked={Boolean(value)}
+											onCheckedChange={() => onChange(Boolean(value) ? "" : "true")}
 											disabled={isPending}
 										/>
 									</FormControl>
 									<FormLabel>
 										He leido y acepto los{" "}
 										<a className="hover:text-primary hover:underline" href="/" target="_black">
-											Terminos y condiciones
+											Términos y condiciones
 										</a>
 									</FormLabel>
 								</div>

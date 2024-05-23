@@ -29,7 +29,7 @@ export const LoginForm = () => {
 
 	const onSubmit = (values: LoginSchemaTypes) => {
 		startTransition(async () => {
-			const data = await login(values)
+			const data = await login(values, { redirectTo: "/" })
 
 			if (data?.error) {
 				setError(data.error)

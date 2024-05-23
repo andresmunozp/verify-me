@@ -8,4 +8,5 @@ export const ERROR_MESSAGE = {
 	fileType: "La imagen debe ser png o jpeg",
 	legalCheckbox: "Debes aceptar los términos y condiciones",
 	invalidFields: "Campos no válidos",
+	generic: "Ocurrió un error, intentalo más tarde",
 }

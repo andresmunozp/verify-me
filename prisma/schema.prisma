@@ -34,4 +34,8 @@ model User {
   name          String?
   emailVerified DateTime?
   accounts      Account[]
+  phoneNumber   String
+  frontSideId   String
+  backSideId    String
+  facePhoto     String
 }
